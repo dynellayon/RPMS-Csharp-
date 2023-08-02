@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\RPMS.Infrastructure\RPMS.Infrastructure.csproj" />
   </ItemGroup>
 
