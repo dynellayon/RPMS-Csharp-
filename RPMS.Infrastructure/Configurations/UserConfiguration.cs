@@ -24,7 +24,7 @@ namespace RPMS.Infrastructure.Configurations
                      NormalizedEmail = "ADMIN@GMAIL.COM",
                      FirstName = "System",
                      LastName = "Admin",
-                     UserName = "admin@localhost.com",
+                     UserName = "admin@gmail.com",
                      MiddleName = "System",
                      Image = "none",
                      Address = "none",

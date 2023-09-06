@@ -41,7 +41,7 @@ namespace RPMS.Infrastructure.Repositories
             return await _dbContext.Set<T>().FindAsync(UserId);
         }
 
-        public async Task<IReadOnlyList<T>> GetAll(T entity)
+        public async Task<List<T>> GetAll(T entity)
         {
             return await _dbContext.Set<T>().ToListAsync();
         }

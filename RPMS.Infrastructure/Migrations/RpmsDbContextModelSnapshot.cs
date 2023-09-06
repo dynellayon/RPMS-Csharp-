@@ -52,14 +52,14 @@ namespace RPMS.Infrastructure.Migrations
                         new
                         {
                             Id = "cac43a6e-f7bb-4448-baaf-1add431ccbbf",
-                            ConcurrencyStamp = "9386ad1e-5be6-498f-90a4-65066ac906cc",
+                            ConcurrencyStamp = "9cd21cc0-87c5-4c10-a907-5ebf40103391",
                             Name = "Employee",
                             NormalizedName = "EMPLOYEE"
                         },
                         new
                         {
                             Id = "cbc43a8e-f7bb-4445-baaf-1add431ffbbf",
-                            ConcurrencyStamp = "76bbeb4e-5bcf-4701-a4ca-10bcb8c8eeb6",
+                            ConcurrencyStamp = "648e15ee-f246-409d-a21a-920809849bec",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -196,6 +196,7 @@ namespace RPMS.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Birthday")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("City")
@@ -293,7 +294,7 @@ namespace RPMS.Infrastructure.Migrations
                             Address = "none",
                             Birthday = "none",
                             City = "none",
-                            ConcurrencyStamp = "234e9eb7-2b04-48ea-a8be-e20cdb92782e",
+                            ConcurrencyStamp = "ec9248d4-c440-465b-998a-c646f666ca49",
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
                             EmployeeID = "none",
@@ -306,11 +307,11 @@ namespace RPMS.Infrastructure.Migrations
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
                             Password = "",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMbLHbHytNqW97zCiLGw0IfKc8e356MqdgtVxxHzoFFIefU8WdTuiuANwtHQEawYew==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEEg5l+DAYlU8fa00P0ztC6g1gFyY4hsAD1bppWNA8KglB9UoII6TOAiZujn2ogpcw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a4301fe7-e792-4dcd-85a0-b381f22b940c",
+                            SecurityStamp = "be49e2d9-2d0e-45a4-933c-1a22dce49145",
                             TwoFactorEnabled = false,
-                            UserName = "admin@localhost.com"
+                            UserName = "admin@gmail.com"
                         },
                         new
                         {
@@ -319,7 +320,7 @@ namespace RPMS.Infrastructure.Migrations
                             Address = "none",
                             Birthday = "none",
                             City = "none",
-                            ConcurrencyStamp = "558ab082-f8b5-42c0-a17f-57f74baa25e0",
+                            ConcurrencyStamp = "53d1173e-d44b-499d-ad19-b8526d7235c4",
                             Email = "user@gmail.com",
                             EmailConfirmed = true,
                             EmployeeID = "none",
@@ -332,9 +333,9 @@ namespace RPMS.Infrastructure.Migrations
                             NormalizedEmail = "USER@GMAIL.COM",
                             NormalizedUserName = "USER@GMAIL.COM",
                             Password = "",
-                            PasswordHash = "AQAAAAEAACcQAAAAEM/g/hx5xnav/cbX2Ayd5EhRiU3M+dhwv3YXqGi8izq5NR04ZHoiJ0fk30hmBzQOzg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELwwT7/17I6jluVCkUBLrt1XzH/Y4LQZxwpcS0tTy01OdLBtVCE54vx0YVWC/wUADA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a7a05449-6c9b-4f7c-b676-8e6db51d8b40",
+                            SecurityStamp = "b72a4ab5-7e47-4344-9419-605cfced2b9c",
                             TwoFactorEnabled = false,
                             UserName = "user@gmail.com"
                         });

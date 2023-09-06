@@ -10,7 +10,10 @@ builder.Services.AddDbContext<RpmsDbContext>(options => options.UseSqlServer(bui
 // Add services to the container.
 builder.Services.ConfigureApplicationServices();
 builder.Services.ConfigureInfrastructureServices(builder.Configuration);
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.InputFormatters.Insert(0, MyJPIF.GetJsonPatchInputFormatter());
+}).AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
@@ -85,6 +88,7 @@ app.UseSwaggerUI(options =>
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "RPMS.API v1");
     
 });
+app.UseStaticFiles();
 app.UseCors("CorsPolicy");
 app.UseHttpsRedirection();
 app.UseAuthentication();

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using RPMS.Application.DTOs;
+using RPMS.Application.DTOs.Auth;
 using RPMS.Application.Features.Auth.Requests;
 using RPMS.Application.ViewModel.Identity;
 using RPMS.Domain;

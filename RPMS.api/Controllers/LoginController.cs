@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using RPMS.Application.DTOs;
+using RPMS.Application.DTOs.Auth;
 using RPMS.Application.Features.Auth.Requests;
 using RPMS.Application.ViewModel.Identity;
 using System.ComponentModel.DataAnnotations;
@@ -21,10 +21,12 @@ namespace RPMS.api.Controllers
         }
         // POST: api/<LoginController>
         [HttpPost("login")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         public async Task<ActionResult<AuthResponseDto>> Login(AuthRequest request)
         {
             var user = await _mediator.Send(new GetAuthRequest { Email=request.Email, Password=request.Password});
-            
+
             return Ok(user);
         }
 

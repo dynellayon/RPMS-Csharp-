@@ -9,7 +9,7 @@ namespace RPMS.Application.Responses
 {
     public class BaseCommandResponse<T>
     {
-        public HttpStatusCode StatusCode { set; get; }
+        public HttpStatusCode StatusCode { set; get; }=HttpStatusCode.OK;
         public T? Reponse { set; get; }
         public object? ValidationError { set; get; }
         public string? Message { set; get; }

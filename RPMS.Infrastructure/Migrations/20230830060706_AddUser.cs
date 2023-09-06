@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace RPMS.Infrastructure.Migrations
 {
     /// <inheritdoc />
@@ -38,7 +40,7 @@ namespace RPMS.Infrastructure.Migrations
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Birthday = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Birthday = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -164,6 +166,33 @@ namespace RPMS.Infrastructure.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "cac43a6e-f7bb-4448-baaf-1add431ccbbf", "9cd21cc0-87c5-4c10-a907-5ebf40103391", "Employee", "EMPLOYEE" },
+                    { "cbc43a8e-f7bb-4445-baaf-1add431ffbbf", "648e15ee-f246-409d-a21a-920809849bec", "Administrator", "ADMINISTRATOR" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "Address", "Birthday", "City", "ConcurrencyStamp", "Email", "EmailConfirmed", "EmployeeID", "FirstName", "Image", "IsDeleted", "LastName", "LockoutEnabled", "LockoutEnd", "MiddleName", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[,]
+                {
+                    { "8e445865-a24d-4543-a6c6-9443d048cdb9", 0, "none", "none", "none", "ec9248d4-c440-465b-998a-c646f666ca49", "admin@gmail.com", true, "none", "System", "none", false, "Admin", false, null, "System", "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "", "AQAAAAEAACcQAAAAEEEg5l+DAYlU8fa00P0ztC6g1gFyY4hsAD1bppWNA8KglB9UoII6TOAiZujn2ogpcw==", null, false, "be49e2d9-2d0e-45a4-933c-1a22dce49145", false, "admin@gmail.com" },
+                    { "9e224968-33e4-4652-b7b7-8574d048cdb9", 0, "none", "none", "none", "53d1173e-d44b-499d-ad19-b8526d7235c4", "user@gmail.com", true, "none", "System", "none", false, "User", false, null, "System", "USER@GMAIL.COM", "USER@GMAIL.COM", "", "AQAAAAEAACcQAAAAELwwT7/17I6jluVCkUBLrt1XzH/Y4LQZxwpcS0tTy01OdLBtVCE54vx0YVWC/wUADA==", null, false, "b72a4ab5-7e47-4344-9419-605cfced2b9c", false, "user@gmail.com" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[,]
+                {
+                    { "cbc43a8e-f7bb-4445-baaf-1add431ffbbf", "8e445865-a24d-4543-a6c6-9443d048cdb9" },
+                    { "cac43a6e-f7bb-4448-baaf-1add431ccbbf", "9e224968-33e4-4652-b7b7-8574d048cdb9" }
                 });
 
             migrationBuilder.CreateIndex(

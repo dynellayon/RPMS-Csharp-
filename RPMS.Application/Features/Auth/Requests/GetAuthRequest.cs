@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using RPMS.Application.DTOs;
+using RPMS.Application.DTOs.Auth;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
