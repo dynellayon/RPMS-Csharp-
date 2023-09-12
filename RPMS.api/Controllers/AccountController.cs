@@ -22,7 +22,6 @@ namespace RPMS.api.Controllers
         {
             _mediator = mediator;
 
-
         }
         // GET: api/<ValuesController>
         [HttpGet]
@@ -30,7 +29,7 @@ namespace RPMS.api.Controllers
         {
             var users = await _mediator.Send(new GetUserListRequest());
             return Ok(users);
-        }
+        }   
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")] 

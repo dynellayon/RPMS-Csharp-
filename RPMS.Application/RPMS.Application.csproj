@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <Folder Include="Features\Auth\Handlers\Commands\" />
+    <Folder Include="Features\Position\Handlers\Commands\" />
+    <Folder Include="Features\Position\Requests\Commands\" />
   </ItemGroup>
 
   <ItemGroup>

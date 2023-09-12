@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using RPMS.Application.Persistence.Contracts;
 
 namespace RPMS.Application
 {

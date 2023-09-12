@@ -4,8 +4,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using RPMS.Application.Persistence.Contracts;
 using RPMS.Application.ViewModel.Identity;
 using RPMS.Domain;
+using RPMS.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +22,7 @@ namespace RPMS.Infrastructure
         {
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
             services.AddScoped<RpmsDbContext>();
+            services.AddTransient<IPositionRepository, PositionRepository>();
             services.AddDbContext<RpmsDbContext>(options =>
                     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),b=>b.MigrationsAssembly(typeof(RpmsDbContext).FullName)));
             services.AddIdentity<ApplicationUser, IdentityRole>()

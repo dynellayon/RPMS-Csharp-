@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using RPMS.Application.DTOs.Position;
+using RPMS.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,7 @@ namespace RPMS.Application
     {
         public MappingProfile() 
         {
-            
+            CreateMap<Position, PositionDto>().ReverseMap();
         }
     }
 }

@@ -22,6 +22,7 @@ namespace RPMS.Infrastructure
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new UserRoleConfiguration());
+            modelBuilder.ApplyConfiguration(new PositionConfiguration());
         }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
@@ -37,6 +38,7 @@ namespace RPMS.Infrastructure
 
             return base.SaveChangesAsync(cancellationToken);
         }
+        public DbSet<Position> Positions { get; set; }
     }
    
 }
