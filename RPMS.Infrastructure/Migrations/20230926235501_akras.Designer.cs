@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RPMS.Infrastructure;
 
@@ -11,9 +12,11 @@ using RPMS.Infrastructure;
 namespace RPMS.Infrastructure.Migrations
 {
     [DbContext(typeof(RpmsDbContext))]
-    partial class RpmsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230926235501_akras")]
+    partial class akras
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -23,6 +23,7 @@ namespace RPMS.Infrastructure
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
             services.AddScoped<RpmsDbContext>();
             services.AddTransient<IPositionRepository, PositionRepository>();
+            services.AddTransient<IKrasRepository, AkrasRepository>();
             services.AddDbContext<RpmsDbContext>(options =>
                     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),b=>b.MigrationsAssembly(typeof(RpmsDbContext).FullName)));
             services.AddIdentity<ApplicationUser, IdentityRole>()

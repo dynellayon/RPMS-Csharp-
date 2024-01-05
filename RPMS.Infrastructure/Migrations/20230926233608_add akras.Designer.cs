@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RPMS.Infrastructure;
 
@@ -11,9 +12,11 @@ using RPMS.Infrastructure;
 namespace RPMS.Infrastructure.Migrations
 {
     [DbContext(typeof(RpmsDbContext))]
-    partial class RpmsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230926233608_add akras")]
+    partial class addakras
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,14 +55,14 @@ namespace RPMS.Infrastructure.Migrations
                         new
                         {
                             Id = "cac43a6e-f7bb-4448-baaf-1add431ccbbf",
-                            ConcurrencyStamp = "9bc728d7-967a-4707-b28c-86da63d95d07",
+                            ConcurrencyStamp = "a2518cad-fe3c-4bfe-93a7-75b38300afc6",
                             Name = "Employee",
                             NormalizedName = "EMPLOYEE"
                         },
                         new
                         {
                             Id = "cbc43a8e-f7bb-4445-baaf-1add431ffbbf",
-                            ConcurrencyStamp = "9b51b624-dbab-4953-9b03-1374b5761cee",
+                            ConcurrencyStamp = "d19f238d-ce98-4854-ae8c-0325ab58d780",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -197,38 +200,6 @@ namespace RPMS.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Akras");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Content Knowledge and Pedagogy (PPST Domain 1)"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Learning Environment (PPST Domain 2)"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Learning Environment (PPST Domain 2) - continuation"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Diversity of Learners, Curriculum and Planning, & Assessment and Reporting\r\n(PPST Domains 3, 4, and 5)"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Community Linkages and Professional Engagement & Personal Growth and\r\nProfessional Development (PPST Domains 6 & 7)"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Plus Factor"
-                        });
                 });
 
             modelBuilder.Entity("RPMS.Domain.ApplicationUser", b =>
@@ -355,7 +326,7 @@ namespace RPMS.Infrastructure.Migrations
                             Address = "none",
                             Birthday = "none",
                             City = "none",
-                            ConcurrencyStamp = "85258a4c-a820-4672-bb52-917a4081cd8c",
+                            ConcurrencyStamp = "7bdb3b5d-0c8c-469c-87d9-5bfb8673f51b",
                             CreatedBy = "",
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@gmail.com",
@@ -372,9 +343,9 @@ namespace RPMS.Infrastructure.Migrations
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
                             Password = "",
-                            PasswordHash = "AQAAAAEAACcQAAAAELmIlJcHWEnKV3/sSQI9H1vn7xKhyZRso//mAF/lQA8pb4vNNt97ug37v6Gkc63xNw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFMEVeEHDpxO3RTbhvpWqRk9g4tYhemjBjCxkcZzTc2nDao7RYQcXTLCfAOZNubKPw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "78f8f8e6-c5b2-4a61-ae4b-bbe174ab78e2",
+                            SecurityStamp = "e2eec1a8-eabf-45a1-aedd-ad3c784c0551",
                             TwoFactorEnabled = false,
                             UserName = "admin@gmail.com"
                         },
@@ -385,7 +356,7 @@ namespace RPMS.Infrastructure.Migrations
                             Address = "none",
                             Birthday = "none",
                             City = "none",
-                            ConcurrencyStamp = "12ea9be9-58b9-46b1-8f7e-a31c156a24f1",
+                            ConcurrencyStamp = "16954046-76aa-4e39-b060-a233e8681552",
                             CreatedBy = "",
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "user@gmail.com",
@@ -402,9 +373,9 @@ namespace RPMS.Infrastructure.Migrations
                             NormalizedEmail = "USER@GMAIL.COM",
                             NormalizedUserName = "USER@GMAIL.COM",
                             Password = "",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEL5eAf3mItuiLqJY+qOBiy5YkmZeropwCPngNZsTGfk0nQuqDAel+h6BLb3T81o8Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEArUE86snp5YKdjNjOvX7nNXg4QcmOm+1bqyGEO0NCOIaa1T4kzSQElNngKm1kirmg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b6fa3e3e-a071-4f46-8708-55bb22c0d00d",
+                            SecurityStamp = "af7d1602-699c-4f93-8590-934509efbb47",
                             TwoFactorEnabled = false,
                             UserName = "user@gmail.com"
                         });

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using RPMS.Application.DTOs.Akras;
 using RPMS.Application.DTOs.Position;
 using RPMS.Domain;
 using System;
@@ -14,6 +15,7 @@ namespace RPMS.Application
         public MappingProfile() 
         {
             CreateMap<Position, PositionDto>().ReverseMap();
+            CreateMap<Akras,AkrasDto>().ReverseMap();
         }
     }
 }
